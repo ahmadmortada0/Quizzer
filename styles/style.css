@@ -8,7 +8,19 @@
     font-family: sans-serif;
 }
 body{
-    background-image: url(../assets/ranger-4df6c1b6.png);
+    background-image: url(../assets/images/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+header{
+    padding:10px 0 0 40px;
+}
+header > p{
+    font-size: 30px;
+    color: var(--second-color);
+}
+header  span{
+color: var(--third-color);
+font-weight: 700;
+font-size: 65px;
 }

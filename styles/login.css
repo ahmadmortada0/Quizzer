@@ -1,15 +1,4 @@
-header{
-    padding:10px 0 0 40px;
-}
-header > p{
-    font-size: 30px;
-    color: var(--second-color);
-}
-header  span{
-color: var(--third-color);
-font-weight: 700;
-font-size: 65px;
-}
+
 .flex{
     display: flex;
     
@@ -69,4 +58,8 @@ main{
         justify-content: center;
     }
 
+}
+.link-page{
+    text-decoration: none;
+    color: white;
 }

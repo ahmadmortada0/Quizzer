@@ -1,0 +1,36 @@
+main{
+    padding-left: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+.flex{
+    display: flex;
+}
+.welcome h1{
+    color: var(--second-color);
+    font-size: 40px;
+}
+.welcome span{
+    color: var(--font-color);
+    font-size: 60px;
+}
+.welcome p{
+    padding-top: 40px;
+    font-size: 20px;
+    color: white;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+.card-section{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.card{
+    background-color: black;
+    height: 400px;
+    width: 400px;
+}
