@@ -59,6 +59,10 @@ main{
     }
 
 }
+.mess{
+    color: red;
+    padding-left: 10px;
+}
 .link-page{
     text-decoration: none;
     color: white;
