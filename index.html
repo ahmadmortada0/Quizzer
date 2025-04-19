@@ -9,9 +9,30 @@
     <link rel="stylesheet" href="./styles/login.css">
 </head>
 <body>
-    <header>
-        
+    <header >
+        <p><span >Q</span>uizzer</p>
     </header>
+    <main class="flex" >
+        <div class="card">
+            <div class="container flex" >
+                <h3 id="join-type">Login</h3>
+            </div>
+            <div class="container flex" >
+                <button class="btns active-btn" id="lgn-btn">Login</button>
+                <button class="btns" id="sgn-btn">Sign in</button><br>
+            </div>
+            <div class="inputs-container">
+                <input class="inputs-layout"type="email" placeholder="Enter your email"><br>
+                <input class="inputs-layout"type="password" placeholder="Enter your password">
+                <input id="confirm-in"class="inputs-layout invisible" type="password" placeholder="Confirm your password" >
+                <br>
+            </div>
+            <div class="container flex" >
+                <button id="submit-btn"class=" active-btn btns" type="submit">Login</button>
+            </div>
+        
+        </div>
+    </main>
     <script src="./scripts/login.js"></script>
 </body>
 </html>

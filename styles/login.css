@@ -1,0 +1,72 @@
+header{
+    padding:10px 0 0 40px;
+}
+header > p{
+    font-size: 30px;
+    color: var(--second-color);
+}
+header  span{
+color: var(--third-color);
+font-weight: 700;
+font-size: 65px;
+}
+.flex{
+    display: flex;
+    
+}
+main{
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.card{
+    height: 40vh;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    width: 20vw;
+}
+.invisible{
+    display: none;
+}
+.container{
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.card h3 {
+    font-size: 30px;
+}
+.btns{
+    font-size: 20px;
+    padding: 10px 60px;
+    border: 1px solid var(--second-color);
+    border-radius: 6px;
+}
+.active-btn{
+    background-color: #1DCD9F;
+    color: white;
+}
+.inputs-layout{
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+.inputs-container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+@media  (max-width:1510px){
+    .btns{
+        font-size: 10px;
+        padding: 10px 10px;
+        border: 1px solid var(--second-color);
+        border-radius: 6px;
+    }
+    header{
+        display: flex;
+        justify-content: center;
+    }
+
+}
