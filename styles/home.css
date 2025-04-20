@@ -7,11 +7,14 @@ main{
 .flex{
     display: flex;
 }
+header{
+    justify-content: space-between;
+}
 .welcome h1{
     color: var(--second-color);
     font-size: 40px;
 }
-.welcome span{
+.welcome .Q{
     color: var(--font-color);
     font-size: 60px;
 }
@@ -27,10 +30,37 @@ main{
 .card-section{
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px ;
+    
 }
 .card{
-    background-color: black;
-    height: 400px;
-    width: 400px;
+    background-color: var(--font-color);
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    padding-top: 10px;
+}
+.card h3{
+    background-color: white;
+    color: var(--font-color);
+    border-radius: 6px;
+}
+.card h1{
+    color: white;
+}
+
+.cont-btn{
+    margin-top: 10px;
+    justify-content: center;
+}
+.quiz-btn{
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--font-color);
+    color: var(--font-color);
+}
+.log-cont{
+    justify-content: end;
+    margin-right: 40px;
+
 }

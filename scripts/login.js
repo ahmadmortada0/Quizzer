@@ -7,7 +7,9 @@ function logIN(){
      form.innerHTML="Login"
      document.getElementById("confirm-in").classList.add("invisible")
      document.getElementById("sgn-btn").classList.remove("active-btn")
-    document.getElementById("lgn-btn").classList.add("active-btn")
+      document.getElementById("lgn-btn").classList.add("active-btn")
+     document.getElementById("in-name").classList.add("invisible")
+
     submitBtn.innerHTML="Login"
     login=true
 
@@ -18,6 +20,7 @@ function signIn(){
     document.getElementById("sgn-btn").classList.add("active-btn")
     document.getElementById("lgn-btn").classList.remove("active-btn")
     document.getElementById("confirm-in").classList.remove("invisible")
+    document.getElementById("in-name").classList.remove("invisible")
     submitBtn.innerHTML="Sign in"
     login=false
   }
@@ -89,21 +92,7 @@ function checkUser(email, password) {
     document.getElementById("hidden-mess").classList.remove("invisible");
   }
 }
-// function checkUser(email,password){
-//   for (let i =0 ; i <localStorage.length;i++){
-//     if (email==="admin@quiz.com"&&password==="admin123"){
-//       document.getElementById("link-page").href="./pages/dashboard.html"
-//     }
-//     else{
-//     if (email===localStorage.getItem("email")&&password===localStorage.getItem("password")){
-//      document.getElementById("link-page").href="./pages/home.html"
-//     }
-//     else{
-//       document.getElementById("hidden-mess").classList.remove("invisible")
-//     }
-//   }
-//   }
-// }
+
 document.getElementById("submit-btn").addEventListener("click", function (e) {
   e.preventDefault();
    email=document.getElementById("inEmail").value

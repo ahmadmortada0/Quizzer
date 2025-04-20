@@ -12,30 +12,34 @@
     <link rel="stylesheet" href="../styles/home.css">
 </head>
 <body>
-    <header >
+    <header  class="flex">
         <p><span >Q</span>uizzer</p>
+        <div class="flex log-cont">
+            <button class="quiz-btn"id="log-btn">logout</button>
+        </div>
+        
     </header>
     <main class="flex">
         <div class=" container welcome">
-                <h1>WELCOME TO <span>Q</span>uizzer </h1>
+                <h1>WELCOME <span  id="name"></span> to <span class="Q">Q</span>uizzer </h1>
                 <p>HOPE IN TO TEST YOURSELF IN SOME QUESTIONS YOU CAN IMPROVE YOUR SELF</P>
         </div>
+        
     </main>
-        <section class=" flex card-section">
-            <div class="card">
-                <div class="class-info">
-                    <h3>Quiz 1</h3>
-                    
-                </div>
+        <section id="cards-sections"class=" flex card-section"></section>
+        
+        <footer class="footer">
+            <div class="footer-content">
+              <p>&copy; 2025 QuizMaster. All rights reserved.</p>
+              <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+              </div>
             </div>
-            <div class="card">
-                <p>a</p>
-            </div>
-            <div class="card">
-                <p>a</p>
-            </div>
-        </section>
-   
+          </footer>
+
+    <script src="../scripts/quizes.js"></script>
     <script src="../scripts/home.js"></script>
 </body>
 </html>
