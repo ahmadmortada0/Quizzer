@@ -3,6 +3,7 @@ let currentUser=localStorage.getItem("currentUser")
 let questions=selectedQuiz.questions
 let user={}
 let users=JSON.parse(localStorage.getItem("users"))
+let userScores=[]
 console.log(users)
 function searchUser(){
     for (let i = 0; i < users.length; i++) {
@@ -40,18 +41,19 @@ for (let i = 0; i < questions.length; i++) {
     for (let i = 0; i < questions.length; i++) {
         total++
         for (let y = 0; y < questions[i].options.length; y++) {
-            if(choices[i].value===questions[i].options[y]){
-                console.log(choices)
+            if(choices[i].value===questions[i].options[y].correct){
+              console.log( choices[i].value)
+              console.log(questions[i].options[y].correct)
                 scoreNum+=1
             }
         }
-    console.log(choices)
     }
-    let userScores = {
+    let userScore = {
         scoreTitle: selectedQuiz.title,
         totalscore: scoreNum,
       };
-      
+    
+    userScores.push(userScore)
       
       for (let i = 0; i < users.length; i++) {
         if (users[i].email === currentUser) {
@@ -65,6 +67,8 @@ for (let i = 0; i < questions.length; i++) {
         userEmail:user.email,
         userScores:userScores,
       }
+      let usersAndScores=[]
+      usersAndScores.push(userAndScore)
 
       document.getElementById("score-container").classList.remove("hidden")
       document.getElementById("score-container").innerHTML=`
@@ -73,7 +77,7 @@ for (let i = 0; i < questions.length; i++) {
     //   console.log(userAndScore)
     //   alert(userAndScore)
  
-      localStorage.setItem("usersAndScores", JSON.stringify(userAndScore));
+      localStorage.setItem("usersAndScores", JSON.stringify(usersAndScores));
       
     console.log(scoreNum)
     console.log(total)
