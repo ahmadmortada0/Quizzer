@@ -40,7 +40,7 @@ function signIn(){
 let email=""
 let password=""
 let username=""
-let users = JSON.parse(localStorage.getItem("users"))
+let users = JSON.parse(localStorage.getItem("users")) || [];
 function newUser(email,password,userName){
   let confirm=document.getElementById("confirm-in").value
   if (password !== confirm) {
@@ -49,25 +49,28 @@ function newUser(email,password,userName){
     document.getElementById("hidden-mess2").classList.remove("invisible");
     return;
   }
-  let exists = users.find(user => user.email === email);
-  if (exists) {
-    document.getElementById('hidden-mess').classList.add("invisible");
-    document.getElementById('hidden-mess2').classList.add("invisible");
-    document.getElementById('hidden-mess3').classList.remove("invisible");
-    return;
+  if(users.length!==0){
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email===email) {
+      document.getElementById('hidden-mess').classList.add("invisible");
+      document.getElementById('hidden-mess2').classList.add("invisible");
+      document.getElementById('hidden-mess3').classList.remove("invisible");
+      return;
+    }
   }
-
+  }
   let newUser = {
     userName:userName,
     email: email,
     password: password,
-    scores: {} 
   };
 
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("currentUser", userName);
+  localStorage.setItem("currentUser", email);
+  localStorage.setItem("currentUserName", userName);
   window.location.href = "./pages/home.html";
+
 
 }
  

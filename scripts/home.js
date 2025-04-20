@@ -1,5 +1,5 @@
 let users = JSON.parse(localStorage.getItem("users"))
-let name=localStorage.getItem("currentUser")
+let name=localStorage.getItem("currentUserName")
 document.getElementById("name").innerHTML= name
 
 let quiz =JSON.parse(localStorage.getItem("quizzes"))
