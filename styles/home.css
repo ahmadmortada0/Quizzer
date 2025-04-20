@@ -59,6 +59,12 @@ header{
     border: 1px solid var(--font-color);
     color: var(--font-color);
 }
+.log-btn{
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--font-color);
+    color: var(--font-color);
+}
 .log-cont{
     justify-content: end;
     margin-right: 40px;

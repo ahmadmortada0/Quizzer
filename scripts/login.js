@@ -39,8 +39,9 @@ function signIn(){
 
 let email=""
 let password=""
+let username=""
 let users = JSON.parse(localStorage.getItem("users"))
-function newUser(email,password){
+function newUser(email,password,userName){
   let confirm=document.getElementById("confirm-in").value
   if (password !== confirm) {
     document.getElementById('hidden-mess').classList.add("invisible");
@@ -48,9 +49,6 @@ function newUser(email,password){
     document.getElementById("hidden-mess2").classList.remove("invisible");
     return;
   }
-
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-
   let exists = users.find(user => user.email === email);
   if (exists) {
     document.getElementById('hidden-mess').classList.add("invisible");
@@ -60,6 +58,7 @@ function newUser(email,password){
   }
 
   let newUser = {
+    userName:userName,
     email: email,
     password: password,
     scores: {} 
@@ -67,20 +66,17 @@ function newUser(email,password){
 
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("currentUser", email);
+  localStorage.setItem("currentUser", userName);
   window.location.href = "./pages/home.html";
 
 }
  
 function checkUser(email, password) {
   if (email === "admin@quiz.com" && password === "admin123") {
-    localStorage.setItem("currentUser", "admin@quiz.com");
+    localStorage.setItem("currentUser", "ADMIN");
     window.location.href = "./pages/dashboard.html";
     return;
   }
-
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-
   let found = users.find(user => user.email === email && user.password === password);
 
   if (found) {
@@ -97,10 +93,11 @@ document.getElementById("submit-btn").addEventListener("click", function (e) {
   e.preventDefault();
    email=document.getElementById("inEmail").value
    password=document.getElementById("inPassword").value
+   userName=document.getElementById("in-name").value
    if(login===true){
     checkUser(email,password)}
     else{
-      newUser(email,password)
+      newUser(email,password,userName)
     }
 }
 )

@@ -12,19 +12,17 @@ for( let i = 0 ; i< quiz.length;i++){
                     <p>${quiz[i].description}</p>
                 </div>
                  <div class="flex cont-btn">
-                    <button class="quiz-btn " id="${quiz[i].id}"> Do This Quiz </button>
+                    <button class="quiz-btn" id="${quiz[i].id}"> Do This Quiz </button>
                     </div>
                     </div>`
 }
-document.getElementById("log-btn").addEventListener("click",function(){
-    window.location.href="../index.html"
-})
-document.querySelectorAll('.quiz-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const selectedQuiz = quiz;
-  
-      localStorage.setItem("selectedQuiz", JSON.stringify(selectedQuiz));
-  
-      window.location.href = "quiz.html";
-    });
-  });
+let btns=document.getElementsByClassName("quiz-btn")
+console.log(btns.length)
+for(let i = 0 ; i<btns.length;i++){
+    btns[i].addEventListener("click",function(){
+        let selectQuiz = quiz[i]
+        console.log(selectQuiz)
+        localStorage.setItem("selected Quiz", JSON.stringify(selectQuiz));
+        window.location.href="../pages/quiz.html"
+    })
+}
