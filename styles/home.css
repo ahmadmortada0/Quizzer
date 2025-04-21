@@ -108,3 +108,19 @@ header{
 .log-btn{
     background: linear-gradient(135deg, #56CCF2, #2F80ED);
 }
+.cursior{
+    color: #2F80ED;
+    animation: blink 1s linear infinite;
+}
+.typewriter{
+    font-family: "Dancing Script", cursive;
+    color: #2F80ED;
+}
+@keyframes blink {
+     0%{
+            opacity: 100%;
+        }
+        50%{
+            opacity: 0%;
+        }
+}

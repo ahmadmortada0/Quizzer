@@ -31,3 +31,38 @@ for(let i = 0 ; i<btns.length;i++){
         window.location.href="../pages/quiz.html"
     })
 }
+//typeWriter code down here
+const titles=[]
+for (let i = 0; i < quiz.length; i++) {
+    titles.push(quiz[i].title)
+}
+function sleep(ms){
+    return new Promise((resolve) => setTimeout(resolve,ms))
+}
+console.log(titles)
+const el = document.getElementById("typewriter");
+let sleepTime=100;
+let index=0;
+const writeLoop=async ()=>{
+    while(true){
+        let word=titles[index]
+        for (let i = 0; i < word.length; i++) {
+            el.innerText=word.substring(0,i+1)
+            await sleep(sleepTime)
+      
+            
+        }
+        await sleep (sleepTime*10)
+        for (let i = word.length; i >0 ; i--) {
+            el.innerText=word.substring(0,i-1)
+            await sleep(sleepTime)
+        }
+        await sleep (sleepTime*5)
+        if (index===titles.length-1){
+            index=0
+        }else{
+            index++
+        }
+    }
+};
+writeLoop()
