@@ -11,4 +11,15 @@ let login= true
 
 
 
- 
+ //a function that change the form value and make some inputs hidden
+function logIN(){
+  form.innerHTML="Login"
+  document.getElementById("con-confirm-in").classList.add("invisible")
+  document.getElementById("sgn-btn").classList.remove("active-btn")
+   document.getElementById("lgn-btn").classList.add("active-btn")
+  document.getElementById("con-in-name").classList.add("invisible")
+
+ submitBtn.innerHTML="Login"
+ login=true
+
+}
