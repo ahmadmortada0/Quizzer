@@ -35,3 +35,20 @@ function signIn(){
   submitBtn.innerHTML="Sign in"
   login=false
 }
+
+//a function that change the type of the password input
+
+document.getElementById('show-password').addEventListener("mousedown",()=>{
+  let check = document.getElementById("inPassword")
+  let confirm=document.getElementById("confirm-in")
+  check.type = "text";
+  confirm.type = "text";
+  
+})
+
+document.getElementById('show-password').addEventListener("mouseup",()=>{
+  let check = document.getElementById("inPassword")
+let confirm=document.getElementById("confirm-in")
+check.type = "password";
+confirm.type="password"
+})
