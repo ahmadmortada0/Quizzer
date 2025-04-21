@@ -44,6 +44,11 @@ header{
     gap: 30px ;
     
 }
+.fa-user{
+    font-size: 40px;
+    padding-bottom: 5px;
+}
+
 .card {
     background: linear-gradient(135deg, #56CCF2, #2F80ED);
     border-radius: 20px;
@@ -74,6 +79,7 @@ header{
 }
 
 .cont-btn{
+    background: linear-gradient(135deg, #56CCF2, #2F80ED);
     margin-top: 10px;
     justify-content: center;
 }
@@ -96,6 +102,9 @@ header{
 
 .log-cont{
     justify-content: end;
-    margin-right: 40px;
-
+    margin: 20px 40px  0 0;
+    
+}
+.log-btn{
+    background: linear-gradient(135deg, #56CCF2, #2F80ED);
 }

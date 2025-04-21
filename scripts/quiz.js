@@ -70,7 +70,7 @@ for (let i = 0; i < questions.length; i++) {
 
       document.getElementById("score-container").classList.remove("hidden")
       document.getElementById("score-container").innerHTML=`
- <p>Your result ${scoreNum}/${questions.length}</p>
+ <p id="score-bar" class="">Your result ${scoreNum}/${questions.length}</p>
  `
     //   console.log(userAndScore)
     //   alert(userAndScore)
@@ -79,7 +79,6 @@ for (let i = 0; i < questions.length; i++) {
       
     // console.log(scoreNum)
     // console.log(total)
-    
     localStorage.setItem("usersAndScores", JSON.stringify(usersAndScores));
 })
  document.getElementById("go-button").addEventListener("click",function(){
