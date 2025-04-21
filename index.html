@@ -7,6 +7,7 @@
     <title>Quizzer</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/login.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header >
@@ -22,10 +23,23 @@
                 <button class="btns" id="sgn-btn">Sign in</button><br>
             </div>
             <div class="inputs-container">
-                <input id="in-name"class="inputs-layout invisible"type="name" placeholder="Enter your name" ><br>
-                <input id="inEmail"class="inputs-layout"type="email" placeholder="Enter your email"><br>
-                <input id="inPassword" class="inputs-layout"type="password" placeholder="Enter your password">
-                <input id="confirm-in"class="inputs-layout invisible" type="password" placeholder="Confirm your password" >
+                
+                <div class="invisible" id="con-in-name">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="in-name"class="inputs-layout "type="name" placeholder="Enter your name" ><br>
+                </div>
+                <div class="">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input id="inEmail"class="inputs-layout"type="email" placeholder="Enter your email"><br>
+                </div>
+                <div class="">
+                    <i class="fa-solid fa-lock"></i>
+                    <input id="inPassword" class="inputs-layout"type="password" placeholder="Enter your password">
+                </div>
+                <div class="invisible" id="con-confirm-in">
+                    <i class="fa-solid fa-check-double"></i>
+                    <input id="confirm-in"class="inputs-layout " type="password" placeholder="Confirm your password" >
+                </div>
                 <br>
                 <span>Show password</span>
                 <input type="checkbox" name="showPassword" id="show-password">
@@ -46,6 +60,11 @@
                    the account is aleardy registerd
                 </p>
         </div>
+            <div class="mess invisible" id="hidden-mess4">
+                <p>
+                   the email you entered is invaild 
+                </p>
+        </div>
             <div class="container flex" >
                 <button id="submit-btn"class=" active-btn btns" type="submit"><a id="link-page" class="link-page"href="#">Login</button>
             
@@ -62,7 +81,7 @@
           </div>
         </div>
       </footer>
-
+      <script src="https://kit.fontawesome.com/8e3cbb70b3.js" crossorigin="anonymous"></script>
     <script src="./scripts/login.js"></script>
 </body>
 </html>

@@ -10,10 +10,13 @@ main{
 }
 .card{
     height: 45vh;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: white;
     width: 20vw;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .invisible{
     display: none;
@@ -21,20 +24,27 @@ main{
 .container{
     justify-content: center;
     margin-bottom: 10px;
+    
 }
 .card h3 {
     font-size: 30px;
 }
 .btns{
-    font-size: 20px;
-    padding: 10px 60px;
-    border: 1px solid var(--second-color);
-    border-radius: 6px;
+   background:black;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 .active-btn{
-    background-color: #1DCD9F;
-    color: white;
+    background: linear-gradient(135deg, #56CCF2, #2F80ED);
 }
+button:hover {
+    background: linear-gradient(135deg, #2D9CDB, #1C64F2);
+    transform: scale(1.05);
+  }
 .inputs-layout{
     padding: 10px;
     margin-bottom: 20px;
@@ -58,6 +68,10 @@ main{
         justify-content: center;
     }
 
+}
+i{
+    color:#1C64F2;
+    margin-right: 3px;
 }
 .mess{
     color: red;

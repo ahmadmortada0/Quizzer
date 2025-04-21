@@ -1,3 +1,4 @@
+const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
 let form=document.getElementById("join-type")
 let submitBtn=document.getElementById("link-page")
 document.getElementById("sgn-btn").addEventListener("click",signIn)
@@ -5,10 +6,10 @@ document.getElementById("lgn-btn").addEventListener("click",logIN)
 let login= true
 function logIN(){
      form.innerHTML="Login"
-     document.getElementById("confirm-in").classList.add("invisible")
+     document.getElementById("con-confirm-in").classList.add("invisible")
      document.getElementById("sgn-btn").classList.remove("active-btn")
       document.getElementById("lgn-btn").classList.add("active-btn")
-     document.getElementById("in-name").classList.add("invisible")
+     document.getElementById("con-in-name").classList.add("invisible")
 
     submitBtn.innerHTML="Login"
     login=true
@@ -19,8 +20,8 @@ function signIn(){
     form.innerHTML="Sign in"
     document.getElementById("sgn-btn").classList.add("active-btn")
     document.getElementById("lgn-btn").classList.remove("active-btn")
-    document.getElementById("confirm-in").classList.remove("invisible")
-    document.getElementById("in-name").classList.remove("invisible")
+    document.getElementById("con-confirm-in").classList.remove("invisible")
+    document.getElementById("con-in-name").classList.remove("invisible")
     submitBtn.innerHTML="Sign in"
     login=false
   }
@@ -47,6 +48,8 @@ function newUser(email,password,userName){
     document.getElementById('hidden-mess').classList.add("invisible");
     document.getElementById('hidden-mess3').classList.add("invisible");
     document.getElementById("hidden-mess2").classList.remove("invisible");
+    document.getElementById('hidden-mess4').classList.add("invisible");
+
     return;
   }
   if(users.length!==0){
@@ -55,7 +58,16 @@ function newUser(email,password,userName){
       document.getElementById('hidden-mess').classList.add("invisible");
       document.getElementById('hidden-mess2').classList.add("invisible");
       document.getElementById('hidden-mess3').classList.remove("invisible");
+      document.getElementById('hidden-mess4').classList.add("invisible");
+
       return;
+    }
+    if(!emailPattern.test(email)){
+      document.getElementById('hidden-mess').classList.add("invisible");
+      document.getElementById('hidden-mess2').classList.add("invisible");
+      document.getElementById('hidden-mess3').classList.add("invisible");
+      document.getElementById('hidden-mess4').classList.remove("invisible");
+      return ;
     }
   }
   }
@@ -89,6 +101,8 @@ function checkUser(email, password) {
     document.getElementById('hidden-mess3').classList.add("invisible");
     document.getElementById('hidden-mess2').classList.add("invisible");
     document.getElementById("hidden-mess").classList.remove("invisible");
+    document.getElementById('hidden-mess4').classList.add("invisible");
+
   }
 }
 
