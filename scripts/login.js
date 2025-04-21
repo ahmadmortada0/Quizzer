@@ -110,11 +110,12 @@ function checkUser(email, password) {
     return;
   }
   let found = users.find(user => user.email === email && user.password === password);//this block of code search in the local storage if theres is a user with same email and password to log in
-
+  let founded =""
+  users.find(user => founded =  user.userName)
   if (found) {
     localStorage.setItem("currentUser", email);
-    localStorage.setItem("currentUserName",userName);
-
+    localStorage.setItem("currentUserName", founded);
+    
     window.location.href = "./pages/home.html";
   } else {        showMessage("hidden-mess");
 
