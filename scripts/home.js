@@ -1,15 +1,20 @@
 let users = JSON.parse(localStorage.getItem("users"))
 let name=localStorage.getItem("currentUserName")
 document.getElementById("name").innerHTML= name
+document.getElementById("log-btn").addEventListener("click",function(){
+    window.location.href="../index.html"
+}
+
+)
 
 let quiz =JSON.parse(localStorage.getItem("quizzes"))
 for( let i = 0 ; i< quiz.length;i++){
     document.getElementById("cards-sections").innerHTML+=
         `<div class="card">
             <div class="class-info">
-                    <h3>Quiz ${quiz[i].id}</h3>
-                    <h1>${quiz[i].title}</h1>
-                    <p>${quiz[i].description}</p>
+                    <h3 class=".poppins-thin">Quiz ${quiz[i].id}</h3>
+                    <h1 class=".poppins-extralight">${quiz[i].title}</h1>
+                    <p class=".poppins-extralight">${quiz[i].description}</p>
                 </div>
                  <div class="flex cont-btn">
                     <button class="quiz-btn" id="${quiz[i].id}"> Do This Quiz </button>

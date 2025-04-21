@@ -3,8 +3,9 @@ let currentUser=localStorage.getItem("currentUser")
 let questions=selectedQuiz.questions
 let user={}
 let users=JSON.parse(localStorage.getItem("users"))
+let usersAndScores = JSON.parse(localStorage.getItem("usersAndScores")) || [];
 let userScores=[]
-console.log(users)
+// console.log(users)
 function searchUser(){
     for (let i = 0; i < users.length; i++) {
     if(users[i].email===currentUser)
@@ -20,7 +21,7 @@ for (let i = 0; i < questions.length; i++) {
     for (let j = 0; j < questions[i].options.length; j++) {
       optionsHTML += `
         <label>
-          <input class= "input-choice" type="radio" name="question${i}" value="${questions[i].options[j]}">
+          <input class= "input-choice" type="radio" name="question${i}" value=${questions[i].options[j]}>
           ${questions[i].options[j]}
         </label><br>
       `;
@@ -34,19 +35,17 @@ for (let i = 0; i < questions.length; i++) {
     `;
   }
   document.getElementById("submit-btn").addEventListener("click", function () {
-    let scoreNum=0
-    let total=0
-   
-    let choices = document.getElementsByClassName("input-choice")
-    for (let i = 0; i < questions.length; i++) {
-        total++
-        for (let y = 0; y < questions[i].options.length; y++) {
-            if(choices[i].value===questions[i].options[y].correct){
-              console.log( choices[i].value)
-              console.log(questions[i].options[y].correct)
-                scoreNum+=1
-            }
-        }
+    let scoreNum = 0;
+    let total = questions.length;
+  
+    for (let i = 0; i < total; i++) {
+      let selected = document.querySelector(`input[name="question${i}"]:checked`);
+      console.log(selected)
+      console.log(selected.value)
+      console.log(questions[i].options[questions[i].correct])
+      if (selected && selected.value === questions[i].options[questions[i].correct]) {
+        scoreNum += 1;
+      }
     }
     let userScore = {
         scoreTitle: selectedQuiz.title,
@@ -61,13 +60,12 @@ for (let i = 0; i < questions.length; i++) {
           break;
         }
       }
-      console.log(user)
+    //   console.log(user)
       let userAndScore={
         username:user.userName,
         userEmail:user.email,
         userScores:userScores,
       }
-      let usersAndScores=[]
       usersAndScores.push(userAndScore)
 
       document.getElementById("score-container").classList.remove("hidden")
@@ -77,14 +75,14 @@ for (let i = 0; i < questions.length; i++) {
     //   console.log(userAndScore)
     //   alert(userAndScore)
  
-      localStorage.setItem("usersAndScores", JSON.stringify(usersAndScores));
-      
-    console.log(scoreNum)
-    console.log(total)
     
- })
+      
+    // console.log(scoreNum)
+    // console.log(total)
+    
+    localStorage.setItem("usersAndScores", JSON.stringify(usersAndScores));
+})
  document.getElementById("go-button").addEventListener("click",function(){
     window.location.href="./home.html"
  })
- 
  

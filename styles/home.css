@@ -4,6 +4,17 @@ main{
     align-items: center;
     height: 60vh;
 }
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
 .flex{
     display: flex;
 }
@@ -33,18 +44,31 @@ header{
     gap: 30px ;
     
 }
-.card{
-    background-color: var(--font-color);
-    height: 200px;
-    width: 200px;
+.card {
+    background: linear-gradient(135deg, #56CCF2, #2F80ED);
     border-radius: 20px;
-    padding-top: 10px;
-}
-.card h3{
-    background-color: white;
-    color: var(--font-color);
-    border-radius: 6px;
-}
+    padding: 20px;
+    color: white;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
 .card h1{
     color: white;
 }
@@ -53,18 +77,23 @@ header{
     margin-top: 10px;
     justify-content: center;
 }
-.quiz-btn{
-    padding: 5px 20px;
-    border-radius: 5px;
-    border: 1px solid var(--font-color);
-    color: var(--font-color);
+
+.quiz-btn, .log-btn{
+    background-color: white;
+    color: #2F80ED;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.log-btn{
-    padding: 5px 20px;
-    border-radius: 5px;
-    border: 1px solid var(--font-color);
-    color: var(--font-color);
+.quiz-btn:hover ,.log-btn:hover{
+    background-color: #2F80ED;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .log-cont{
     justify-content: end;
     margin-right: 40px;
