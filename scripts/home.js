@@ -22,6 +22,11 @@ for( let i = 0 ; i< quiz.length;i++){
                     </div>
                     </div>`
 }
+document.getElementById('menu-toggle').addEventListener('click', function () {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('show');
+  });
+  document.getElementById("username-li").innerHTML=`<p><i class="fa-solid fa-user"></i><span>${name} </span></p>`
 let btns=document.getElementsByClassName("quiz-btn")
 console.log(btns.length)
 //here each button has an id so each button send to the local storage the specific data for the quiz page to render the questions
