@@ -4,6 +4,7 @@ let submitBtn=document.getElementById("link-page")
 document.getElementById("sgn-btn").addEventListener("click",signIn)
 document.getElementById("lgn-btn").addEventListener("click",logIN)
 let login= true
+//a function that change the form value and make some inputs hidden
 function logIN(){
      form.innerHTML="Login"
      document.getElementById("con-confirm-in").classList.add("invisible")
@@ -15,6 +16,7 @@ function logIN(){
     login=true
 
 }
+//a function that change the form value and make some inputs visible
 
 function signIn(){
     form.innerHTML="Sign in"
@@ -25,48 +27,63 @@ function signIn(){
     submitBtn.innerHTML="Sign in"
     login=false
   }
-  document.getElementById('show-password').addEventListener("click",changeVisiblity)
-  function changeVisiblity() {
+//a function that change the type of the password input
+
+  document.getElementById('show-password').addEventListener("mousedown",()=>{
     let check = document.getElementById("inPassword")
     let confirm=document.getElementById("confirm-in")
-  if (check.type === "password") {
     check.type = "text";
     confirm.type = "text";
-  } else {
+    
+  })
+  document.getElementById('show-password').addEventListener("mouseup",()=>{
+        let check = document.getElementById("inPassword")
+    let confirm=document.getElementById("confirm-in")
     check.type = "password";
     confirm.type="password"
-  }
+  })
+  // document.getElementById('show-password').addEventListener("mouseup",changeVisiblity)
+//   function changeVisiblity() {
+//     let check = document.getElementById("inPassword")
+//     let confirm=document.getElementById("confirm-in")
+//   if (check.type === "password") {
+//     check.type = "text";
+//     confirm.type = "text";
+//   } else {
+//     check.type = "password";
+//     confirm.type="password"
+//   }
+// }
+function showMessage(id) {
+  ['hidden-mess', 'hidden-mess2', 'hidden-mess3', 'hidden-mess4'].forEach(msg => {
+    document.getElementById(msg).classList.add("invisible");
+  });
+  document.getElementById(id).classList.remove("invisible");
 }
-
 let email=""
 let password=""
 let username=""
-let users = JSON.parse(localStorage.getItem("users")) || [];
+let users = JSON.parse(localStorage.getItem("users")) || [];//intialising the key of this data to avoid problems 
+//to check and create a new user and store the data to local storage
 function newUser(email,password,userName){
   let confirm=document.getElementById("confirm-in").value
-  if (password !== confirm) {
-    document.getElementById('hidden-mess').classList.add("invisible");
-    document.getElementById('hidden-mess3').classList.add("invisible");
-    document.getElementById("hidden-mess2").classList.remove("invisible");
-    document.getElementById('hidden-mess4').classList.add("invisible");
+    //checking if password is = to confirm password
 
+  if (password !== confirm) {
+    showMessage("hidden-mess2")
     return;
   }
+    //checking if email is alerady registered by getting data from the local storage
+
   if(users.length!==0){
     for (let i = 0; i < users.length; i++) {
-      if (users[i].email===email) {
-      document.getElementById('hidden-mess').classList.add("invisible");
-      document.getElementById('hidden-mess2').classList.add("invisible");
-      document.getElementById('hidden-mess3').classList.remove("invisible");
-      document.getElementById('hidden-mess4').classList.add("invisible");
-
+      if (users[i].email===email||email==="admin@quiz.com") {
+        showMessage("hidden-mess3")
       return;
     }
+    //checking if email is valid
     if(!emailPattern.test(email)){
-      document.getElementById('hidden-mess').classList.add("invisible");
-      document.getElementById('hidden-mess2').classList.add("invisible");
-      document.getElementById('hidden-mess3').classList.add("invisible");
-      document.getElementById('hidden-mess4').classList.remove("invisible");
+      showMessage("hidden-mess4")
       return ;
     }
   }
@@ -85,33 +102,29 @@ function newUser(email,password,userName){
 
 
 }
- 
+ //this is a hardcoded function for the admin page
 function checkUser(email, password) {
   if (email === "admin@quiz.com" && password === "admin123") {
     localStorage.setItem("currentUser", "ADMIN");
     window.location.href = "./pages/dashboard.html";
     return;
   }
-  let found = users.find(user => user.email === email && user.password === password);
+  let found = users.find(user => user.email === email && user.password === password);//this block of code search in the local storage if theres is a user with same email and password to log in
 
   if (found) {
     localStorage.setItem("currentUser", email);
     window.location.href = "./pages/home.html";
-  } else {
-    document.getElementById('hidden-mess3').classList.add("invisible");
-    document.getElementById('hidden-mess2').classList.add("invisible");
-    document.getElementById("hidden-mess").classList.remove("invisible");
-    document.getElementById('hidden-mess4').classList.add("invisible");
+  } else {        showMessage("hidden-mess");
 
   }
 }
 
-document.getElementById("submit-btn").addEventListener("click", function (e) {
-  e.preventDefault();
+document.getElementById("submit-btn").addEventListener("click", function () {
    email=document.getElementById("inEmail").value
+   email=email.toLowerCase()
    password=document.getElementById("inPassword").value
    userName=document.getElementById("in-name").value
-   if(login===true){
+   if(login){
     checkUser(email,password)}
     else{
       newUser(email,password,userName)
