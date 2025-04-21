@@ -41,7 +41,7 @@ main{
 .active-btn{
     background: linear-gradient(135deg, #56CCF2, #2F80ED);
 }
-button:hover {
+.btns:hover {
     background: linear-gradient(135deg, #2D9CDB, #1C64F2);
     transform: scale(1.05);
   }
@@ -80,4 +80,14 @@ i{
 .link-page{
     text-decoration: none;
     color: white;
+}
+.show-password{
+    background-color: transparent;
+    border: 0px ;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.show-password:hover{
+    font-size: 14px;
+    transform: scale(1.05);
 }

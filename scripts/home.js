@@ -1,12 +1,13 @@
 let users = JSON.parse(localStorage.getItem("users"))
 let name=localStorage.getItem("currentUserName")
 document.getElementById("name").innerHTML= name
+//go back function
 document.getElementById("log-btn").addEventListener("click",function(){
     window.location.href="../index.html"
 }
 
 )
-
+//generating cards on how much quizzes i have in a local storage 
 let quiz =JSON.parse(localStorage.getItem("quizzes"))
 for( let i = 0 ; i< quiz.length;i++){
     document.getElementById("cards-sections").innerHTML+=
@@ -23,6 +24,7 @@ for( let i = 0 ; i< quiz.length;i++){
 }
 let btns=document.getElementsByClassName("quiz-btn")
 console.log(btns.length)
+//here each button has an id so each button send to the local storage the specific data for the quiz page to render the questions
 for(let i = 0 ; i<btns.length;i++){
     btns[i].addEventListener("click",function(){
         let selectQuiz = quiz[i]
@@ -39,7 +41,6 @@ for (let i = 0; i < quiz.length; i++) {
 function sleep(ms){
     return new Promise((resolve) => setTimeout(resolve,ms))
 }
-console.log(titles)
 const el = document.getElementById("typewriter");
 let sleepTime=100;
 let index=0;

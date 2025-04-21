@@ -24,6 +24,7 @@ header{
 .welcome h1{
     color: var(--second-color);
     font-size: 40px;
+    margin-bottom: 40px;
 }
 .welcome .Q{
     color: var(--font-color);
@@ -31,7 +32,7 @@ header{
 }
 .welcome p{
     padding-top: 40px;
-    font-size: 20px;
+    font-size: 1.5rem;
     color: white;
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
