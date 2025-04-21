@@ -113,6 +113,8 @@ function checkUser(email, password) {
 
   if (found) {
     localStorage.setItem("currentUser", email);
+    localStorage.setItem("currentUserName",userName);
+
     window.location.href = "./pages/home.html";
   } else {        showMessage("hidden-mess");
 
