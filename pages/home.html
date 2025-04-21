@@ -17,10 +17,16 @@
 <body>
     <header  class="flex">
         <p><span >Q</span>uizzer</p>
-        <div class=" log-cont">
-            <button class="log-btn"id="log-btn">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
-        </div>
-        
+        <nav class=" flex nav-container">
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="flex nav-menu" id="nav-menu">
+              <li id="username-li"></li>
+              <li><button class="log-btn" id="log-btn">Logout <i class="fa-solid fa-right-from-bracket"></i></button></li>
+            </ul>
+          </nav>
+          
     </header>
     <main class="flex">
         <div class=" container welcome">
